@@ -1,7 +1,13 @@
 type Query {
-    items: [Item!]!
+    orders: [Order!]!
 }
 
-type Item {
+type Order {
+    userName: String!
+    products: [Product!]!
+}
+
+type Product {
     name: String!
+    price: Int!
 }
