@@ -1,0 +1,12 @@
+{
+  "name": "graphqlspike",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "graphql-yoga": "^1.17.4"
+  }
+}
