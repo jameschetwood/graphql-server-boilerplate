@@ -1,5 +1,6 @@
 type Query {
     orders(id: ID!): [Order!]!
+    products: [Product!]!
 }
 
 type Order {
@@ -8,6 +9,6 @@ type Order {
 }
 
 type Product {
-    name: String!
-    price: Int!
+    name: String
+    price: Int
 }
