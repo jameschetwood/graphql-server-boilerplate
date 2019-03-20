@@ -8,4 +8,10 @@ const resolvers = {
 
 const server = new GraphQLServer({ typeDefs: "./schema.graphql", resolvers });
 
-server.start(() => console.log("Server is running on localhost:4000"));
+const options = {
+  port: 1234
+};
+
+server.start(options, () =>
+  console.log(`Server is running on localhost:${options.port}`)
+);
