@@ -1,22 +1,9 @@
-// import { GraphQLServer } from "graphql-yoga";
 const { GraphQLServer } = require("graphql-yoga");
 
-const sampleOrders = [
-  {
-    userName: "Fake user",
-    products: [
-      {
-        name: "Fake product",
-        price: 100000
-      }
-    ]
-  }
-];
+const queries = require("./resolvers/queries");
 
 const resolvers = {
-  Query: {
-    orders: () => sampleOrders
-  }
+  Query: queries
 };
 
 const server = new GraphQLServer({ typeDefs: "./schema.graphql", resolvers });
