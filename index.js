@@ -1,16 +1,25 @@
 // import { GraphQLServer } from "graphql-yoga";
 const { GraphQLServer } = require("graphql-yoga");
-// ... or using `require()`
+
+const sampleItems = [
+  { name: "Apple" },
+  { name: "Banana" },
+  { name: "Orange" },
+  { name: "Melon" }
+];
 
 const typeDefs = `
   type Query {
-    hello(name: String): String!
+    items: [Item!]!
+  }
+  type Item {
+    name: String!
   }
 `;
 
 const resolvers = {
   Query: {
-    hello: (_, { name }) => `Hello ${name || "World"}`
+    items: () => sampleItems
   }
 };
 
