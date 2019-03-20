@@ -25,6 +25,7 @@ const sampleOrder2 = [
 const orders = (root, { id }, ctx) => {
   if (id === "one") return sampleOrder1;
   if (id === "two") return sampleOrder2;
+  if (id === "three") return [];
   throw Error("User does not exist");
 };
 

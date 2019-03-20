@@ -9,6 +9,6 @@ type Order {
 }
 
 type Product {
-    name: String
-    price: Int
+    name: String!
+    price: Int!
 }
