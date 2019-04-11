@@ -66,10 +66,43 @@ const addProduct3 = (root, args, ctx) => {
 }
  */
 
-// import { AuthenticationError } from 'apollo-server'
+const addProduct4 = (root, { price }, ctx) => {
+  if (price === 0) {
+    return {
+      product: {
+        name: "Mock product 4",
+        price: 0
+      }
+    };
+  }
+  return {
+    failures: [
+      {
+        message: "Im not going to allow that for reason x",
+        type: "INVALID_VOUCHER"
+      }
+    ]
+  };
+};
+/*
+{
+  "data": {
+    "addProduct4": {
+      "product": null,
+      "failures": [
+        {
+          "message": "Im not going to allow that for reason x",
+          "type": "INVALID_VOUCHER"
+        }
+      ]
+    }
+  }
+}
+ */
 
 module.exports = {
   addProduct1,
   addProduct2,
-  addProduct3
+  addProduct3,
+  addProduct4
 };

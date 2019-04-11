@@ -7,6 +7,23 @@ type Mutation {
   addProduct1(name: String!, price: Int!): Product
   addProduct2(name: String!, price: Int!): Product
   addProduct3(name: String!, price: Int!): Product
+  addProduct4(name: String!, price: Int!): AddProductPayload
+}
+
+type AddProductPayload {
+  product: Product
+  failures: [AddProductPayloadFailure]
+}
+
+type AddProductPayloadFailure {
+  message: String!
+  type: FailureTypes!
+}
+
+enum FailureTypes {
+  INVALID_VOUCHER
+  EXPIRED_VOUCHER
+  REDEEMED_VOUCHER
 }
 
 type Order {
