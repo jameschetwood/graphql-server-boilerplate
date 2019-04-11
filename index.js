@@ -1,9 +1,11 @@
 const { GraphQLServer } = require("graphql-yoga");
 
 const queries = require("./resolvers/queries");
+const mutations = require("./resolvers/mutations");
 
 const resolvers = {
-  Query: queries
+  Query: queries,
+  Mutation: mutations
 };
 
 const server = new GraphQLServer({ typeDefs: "./schema.graphql", resolvers });
