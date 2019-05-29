@@ -21,7 +21,7 @@ const options = {
     costAnalysis({
       variables: req.query.variables,
       maximumCost: 50,
-      defaultCost: 1,
+      defaultCost: 0,
       onComplete(cost) {
         console.log(`Cost analysis score: ${cost}`);
       }

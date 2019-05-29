@@ -38,12 +38,23 @@ type Product {
   price: Int!
 }
 
-type Author {
+directive @cost(
+  multipliers: [String]
+  useMultipliers: Boolean
+  complexity: CostComplexity
+) on OBJECT | FIELD_DEFINITION
+
+input CostComplexity {
+  min: Int = 1
+  max: Int
+}
+
+type Author @cost(complexity: 1) {
   name: String
   books: [Book]
 }
 
-type Book {
+type Book @cost(complexity: 1) {
   title: String
   author: Author
 }
