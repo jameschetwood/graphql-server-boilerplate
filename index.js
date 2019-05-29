@@ -2,26 +2,14 @@ const { GraphQLServer } = require("graphql-yoga");
 
 const queries = require("./resolvers/queries");
 const mutations = require("./resolvers/mutations");
+const Author = require("./resolvers/author");
+const Book = require("./resolvers/book");
 
 const resolvers = {
   Query: queries,
   Mutation: mutations,
-  Author: {
-    books() {
-      return [
-        {
-          title: "woop"
-        }
-      ];
-    }
-  },
-  Book: {
-    author() {
-      return {
-        name: "Andy Smith2"
-      };
-    }
-  }
+  Author,
+  Book
 };
 
 const server = new GraphQLServer({ typeDefs: "./schema.graphql", resolvers });

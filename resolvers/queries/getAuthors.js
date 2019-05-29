@@ -4,7 +4,7 @@ const getAuthors = (root, args, ctx) => {
       name: "Andy Smith",
       books: [
         {
-          title: "dsfds"
+          title: "War and stuff"
         }
       ]
     }
