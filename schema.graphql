@@ -1,7 +1,8 @@
 type Query {
   orders(id: ID!): [Order!]!
   products: [Product!]!
-  user: User
+  getBooks: [Book]
+  getAuthors: [Author]
 }
 
 type Mutation {
@@ -37,12 +38,12 @@ type Product {
   price: Int!
 }
 
-type Location {
-  town: String
-  user: User
+type Book {
+  title: String
+  author: Author
 }
 
-type User {
+type Author {
   name: String
-  location: Location
+  books: [Book]
 }

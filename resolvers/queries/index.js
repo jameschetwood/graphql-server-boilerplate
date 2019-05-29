@@ -1,9 +1,11 @@
 const orders = require("./orders");
 const products = require("./products");
-const user = require("./user");
+const getBooks = require("./getBooks");
+const getAuthors = require("./getAuthors");
 
 module.exports = {
   orders,
   products,
-  user
+  getBooks,
+  getAuthors
 };
