@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "apollo-server": "^2.4.8",
+    "graphql-cost-analysis": "^1.0.3",
     "graphql-yoga": "^1.17.4"
   },
   "devDependencies": {
