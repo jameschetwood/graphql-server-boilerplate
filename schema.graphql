@@ -10,6 +10,7 @@ type Mutation {
   addProduct2(name: String!, price: Int!): Product
   addProduct3(name: String!, price: Int!): Product
   addProduct4(name: String!, price: Int!): AddProductPayload
+  createAuthor(name: String!): Author! @cost(complexity: 10)
 }
 
 type AddProductPayload {

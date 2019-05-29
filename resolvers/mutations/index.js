@@ -100,9 +100,16 @@ const addProduct4 = (root, { price }, ctx) => {
 }
  */
 
+const createAuthor = (root, { name }, ctx) => {
+  return {
+    name
+  };
+};
+
 module.exports = {
   addProduct1,
   addProduct2,
   addProduct3,
-  addProduct4
+  addProduct4,
+  createAuthor
 };
