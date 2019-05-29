@@ -5,7 +5,23 @@ const mutations = require("./resolvers/mutations");
 
 const resolvers = {
   Query: queries,
-  Mutation: mutations
+  Mutation: mutations,
+  Author: {
+    books() {
+      return [
+        {
+          title: "woop"
+        }
+      ];
+    }
+  },
+  Book: {
+    author() {
+      return {
+        name: "Andy Smith2"
+      };
+    }
+  }
 };
 
 const server = new GraphQLServer({ typeDefs: "./schema.graphql", resolvers });

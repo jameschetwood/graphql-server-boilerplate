@@ -1,7 +1,12 @@
 const getAuthors = (root, args, ctx) => {
   return [
     {
-      name: "Andy Smith"
+      name: "Andy Smith",
+      books: [
+        {
+          title: "dsfds"
+        }
+      ]
     }
   ];
 };
