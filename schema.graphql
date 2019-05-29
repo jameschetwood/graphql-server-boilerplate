@@ -49,40 +49,12 @@ input CostComplexity {
   max: Int
 }
 
-type Author
-  @cost(
-    multipliers: [
-      "author"
-      "Author"
-      "name"
-      "Name"
-      "Book"
-      "book"
-      "Title"
-      "title"
-    ]
-    useMultipliers: true
-    complexity: 1
-  ) {
+type Author @cost(complexity: 1) {
   name: String
   books: [Book]
 }
 
-type Book
-  @cost(
-    multipliers: [
-      "author"
-      "Author"
-      "name"
-      "Name"
-      "Book"
-      "book"
-      "Title"
-      "title"
-    ]
-    useMultipliers: true
-    complexity: 1
-  ) {
+type Book @cost(complexity: 1) {
   title: String
   author: Author
 }
