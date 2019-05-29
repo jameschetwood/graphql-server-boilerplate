@@ -20,7 +20,7 @@ const options = {
   validationRules: req => [
     costAnalysis({
       variables: req.query.variables,
-      maximumCost: 50,
+      maximumCost: 10,
       defaultCost: 0,
       onComplete(cost) {
         console.log(`Cost analysis score: ${cost}`);
